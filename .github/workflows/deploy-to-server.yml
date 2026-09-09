@@ -13,9 +13,9 @@ jobs:
             - name: SSH to production server and create app folder
               uses: appleboy/ssh-action@master
               with:
-                host: ${{ secrets.EC2_HOST }}
-                username: ${{ secrets.EC2_USER }}
-                key: ${{ secrets.EC2_SSH_KEY }}
+                host: ${{ secrets.EC2_HOST }}  # public IP
+                username: ${{ secrets.EC2_USER }} # username of instance
+                key: ${{ secrets.EC2_SSH_KEY }}  # public key 
                 script: |
                     echo "Starting Deployment"
                     mkdir -p devops
